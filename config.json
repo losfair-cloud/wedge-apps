@@ -1,0 +1,14 @@
+{
+    "backend": "Singlepass",
+    "apps": [
+        {
+            "name": "icmp-echo",
+            "executable": "./wedge-apps/icmp-echo.wasm"
+        }
+    ],
+    "routes": {
+        "2a0d:f407:1002:600::1": {
+            "app": "icmp-echo"
+        }
+    }
+}
