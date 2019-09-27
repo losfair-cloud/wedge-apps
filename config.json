@@ -6,16 +6,21 @@
             "executable": "./wedge-apps/icmp-echo.wasm"
         },
         {
-            "name": "nat_proxy",
-            "executable": "./wedge-apps/nat_proxy.wasm"
+            "name": "nat_proxy_google_dns",
+            "executable": "./wedge-apps/nat_proxy.wasm",
+            "options": {
+                "port_0_icmp": "[2001:4860:4860::8888]:0",
+                "port_53_udp": "[2001:4860:4860::8888]:53",
+                "port_53_tcp": "[2001:4860:4860::8888]:53"
+            }
         }
     ],
     "routes": {
         "2a0d:f407:1002:600::1": {
             "app": "icmp-echo"
         },
-        "2a0d:f407:1002:600::2": {
-            "app": "nat_proxy"
+        "2a0d:f407:1002:600::8888": {
+            "app": "nat_proxy_google_dns"
         }
     }
 }
