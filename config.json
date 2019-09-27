@@ -4,11 +4,18 @@
         {
             "name": "icmp-echo",
             "executable": "./wedge-apps/icmp-echo.wasm"
+        },
+        {
+            "name": "nat_proxy",
+            "executable": "./wedge-apps/nat_proxy.wasm"
         }
     ],
     "routes": {
         "2a0d:f407:1002:600::1": {
             "app": "icmp-echo"
+        },
+        "2a0d:f407:1002:600::2": {
+            "app": "nat_proxy"
         }
     }
 }
